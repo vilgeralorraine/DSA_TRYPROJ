@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h2><a href="/">Anonymous Journal</a></h2>
+        <nav>
+            <a href="/submit">Submit</a>
+            <a className="nav2" href="#">About<span></span></a>
+                    <a className="nav3" href="#">Browse<span></span></a>
+        </nav>
+    </header>
+    <main>
+        <form action="/register" method="POST">
+            <% errors.forEach(error => { %>
+                <p class="notice"><%= error %></p>
+            <% }) %>
+            
+            <fieldset>
+                <legend>Send a message</legend>
+                <label for="uName"><small>Name</small></label>
+                <input type="text" id="uName" name="uName" autocomplete="off">
+
+                <label for="message"><small>Type your message</small></label>
+                <input type="message" id="message" name="message" autocomplete="off">
+
+                <br />
+                <button>Submit</button>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <small>&copy; Anonymous Journal</small>
+    </footer>
+</body>
+</html>
